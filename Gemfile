@@ -2,7 +2,8 @@
 
 source "https://rubygems.org"
 
-gem 'dotenv'
+gem 'pry', groups: [:development, :test]
+gem 'dotenv', groups: [:development, :test]
 gem 'faraday'
 gem 'sinatra'
 gem 'sinatra-contrib'

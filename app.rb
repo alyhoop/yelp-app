@@ -11,14 +11,14 @@ DEFAULT_TERM        = 'brunch'
 DEFAULT_LOCATION    = 'Dallas, TX'
 
 get '/' do
-url = "#{API_HOST}#{SEARCH_PATH}"
+  url = "#{API_HOST}#{SEARCH_PATH}"
 
-resp = Faraday.get(url) do |req|
-  req.params['term'] = params[:term] || DEFAULT_TERM
-  req.params['location'] = params[:location] || DEFAULT_LOCATION
-  req.headers['Content-Type'] = 'application/json'
-  req.headers['Authorization'] = "Bearer #{ENV['API_KEY']}"
-end
+  resp = Faraday.get(url) do |req|
+    req.params['term'] = params[:term] || DEFAULT_TERM
+    req.params['location'] = params[:location] || DEFAULT_LOCATION
+    req.headers['Content-Type'] = 'application/json'
+    req.headers['Authorization'] = "Bearer #{ENV['API_KEY']}"
+  end
 
-resp.body
+  resp.body
 end
