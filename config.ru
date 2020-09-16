@@ -1,3 +1,3 @@
-require './alys-yelp-app'
+require './app'
 
 run Sinatra::Application
